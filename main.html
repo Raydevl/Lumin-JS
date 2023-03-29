@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat App</title>
+	<style>
+		#chat-window {
+			width: 80%;
+			height: 400px;
+			border: 1px solid #ccc;
+			overflow-y: scroll;
+			margin-bottom: 10px;
+			padding: 10px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<div id="chat-window"></div>
+	<input type="text" id="chat-message" />
+	<button type="button" id="send-message">Send</button>
+
+	<script>
+		// Get references to DOM elements
+		var messageWindow = document.getElementById("chat-window");
+		var messageInput = document.getElementById("chat-message");
+		var sendButton = document.getElementById("send-message");
+
+		// Set up event listeners for send button and message input
+		sendButton.addEventListener("click", sendMessage);
+		messageInput.addEventListener("keypress", function (event) {
+			if (event.keyCode === 13) {
+				sendMessage();
+			}
+		});
+
+		// Function to send a message
+		function sendMessage() {
+			// Get the message from the input field
+			var message = messageInput.value;
+
+			// Create a new message element
+			var messageElement = document.createElement("div");
+			messageElement.innerHTML = message;
+
+			// Add the message to the message window
+			messageWindow.appendChild(messageElement);
+
+			// Clear the message input field
+			messageInput.value = "";
+		}
+	</script>
+</body>
+</html>
+
+
+		// Function to send a message
+		function sendMessage() {
+			// Get the message from the input field
+			var message = messageInput.value;
+
+			// Create a new message element
+			var messageElement = document.createElement("div");
+			messageElement.innerHTML = message;
+
+			// Add the message to the message window
+			messageWindow.appendChild(messageElement);
+
+			// Clear the message input field
+			messageInput.value = "";
+		}
+	</script>
+</body>
+</html>
